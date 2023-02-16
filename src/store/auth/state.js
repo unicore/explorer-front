@@ -1,0 +1,22 @@
+export default {
+  authMethod: undefined,
+  username: undefined,
+  wif: undefined,
+  wif_encrypted: undefined,
+  last_use: undefined,
+  autoLogin: true,
+  isAuth: false,
+  loggedInBlockchain: false,
+  accountNames: [],
+  scatterUser: null,
+  showDialog: false,
+  showReg: false,
+  community: null,
+  partnerLevel: null,
+  partners: [],
+  conditions: [],
+  partner: {},
+  isPartner: true,
+  isGuest: false,
+  guest: {}
+}

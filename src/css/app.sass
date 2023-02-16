@@ -1,0 +1,90 @@
+// app global css in Sass form
+h1, h2, h3, h4, h5, h6
+  // font-family: "Comic Sans MS", cursive, sans-serif
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+
+h1
+  font-size: 28px;
+  font-weight: 400;
+
+h2
+  font-size: 26px;
+
+h3
+  font-size: 22px;
+
+h4
+  font-size: 20px;
+
+q-drawer
+  scrollbar-width: none;
+
+html
+  background: 241f1f;
+  scrollbar-width: none;
+
+body  
+  background: 241f1f;
+  scrollbar-width: none;
+
+p 
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  
+a
+  color: teal;
+
+html
+  overflow-x: hidden
+  
+  background: $primary;
+
+@mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%))
+  ::-webkit-scrollbar
+    width:  $size;
+    height: $size;
+
+  ::-webkit-scrollbar-thumb
+    background: $secondary;
+    
+
+  ::-webkit-scrollbar-track
+    background: $primary;
+    
+  // For Internet Explorer
+  body
+    scrollbar-face-color: $secondary;
+    scrollbar-track-color: $primary;
+
+    
+    
+
+/**
+ * Call the damn thing
+ */
+@include scrollbar(.25em, $primary);
+
+.text-caption
+  letter-spacing: 0.01333em;
+
+.notify-class
+  width: 100%;
+  border-radius: 0;
+
+.q-notifications__list
+  margin-bottom: 0px !important;
+
+.q-notification
+  max-width: none !important;
+  margin: 0px 0px 0px 0px !important;
+  border-top: .1em solid black;
+  font-size: 18px;
+.q-notification--standard
+  min-height: 50px !important;
+
+.q-notification__message
+  padding: 0 !important;
+

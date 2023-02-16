@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.productName %></title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.productDescription %>">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (htmlWebpackPlugin.options.ctx.mode.cordova || htmlWebpackPlugin.options.ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>">
+
+
+    <meta name="og:image" content="https://i.ibb.co/znXQm6T/kolrazum-02.png" data-qmeta="ogImage">
+    <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.productName %>" data-qmeta="twitterImage">
+    <meta name="og:title" content="<%= htmlWebpackPlugin.options.productName %>" data-qmeta="ogTitle">
+    <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.productName %>" data-qmeta="twitterTitle">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.productDescription %>" data-qmeta="description">
+    <meta name="og:description" content="<%= htmlWebpackPlugin.options.productDescription %>" data-qmeta="ogDescription">
+    <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.productDescription %>" data-qmeta="twitterDescription">
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="statics/icons2/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="statics/icons2/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="statics/icons2/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="statics/icons2/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="statics/icons2/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="statics/icons2/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="statics/icons2/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="statics/icons2/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="statics/icons2/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="statics/icons2/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="statics/icons2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="statics/icons2/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="statics/icons2/favicon-16x16.png">
+    <link rel="manifest" href="statics/icons2/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="statics/icons2/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+  </head>
+  <body>
+    <!-- DO NOT touch the following DIV -->
+    <div id="q-app">
+      <div class="frame" id="loading__container"> 
+        <template class="helper"></template><img id="imgspinn" src="statics/spinner3.gif"></img>
+      </div>
+    </div>
+<style>
+#loading__container {
+    max-heght: 90vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+html{
+  background: #241f1f;
+}
+
+.frame {
+    height: 90vh;      /* equals max image height */
+    /*width: 160px;*/
+    /*border: 1px solid red;*/
+    /*white-space: nowrap;*/
+    text-align: center; 
+    overflow: hidden;
+}
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+
+}
+#imgspinn {
+    
+    vertical-align: middle;
+    max-height: 100px;
+    
+}
+</style>
+
+  </body>
+</html>
