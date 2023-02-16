@@ -1,6 +1,6 @@
 <template lang="pug">
   .q-pa-md
-    h1 Блокчейн {{$config.ual.rootChain.toUpperCase()}}
+    // q-select( map-options emit-value color="secondary" dark filled v-model="blockchain" :options="goalOptions" label="Блокчейн")
     .row.q-col-gutter-sm
       .col-xs-12.col-md-3(
         v-for="status in chainMainStatus",
@@ -10,7 +10,12 @@
           q-card-section
             .text-h6 {{status.value}}
             .text-subtitle2 {{status.title}}
+    
     Search
+    
+    // h1 Блокчейн {{this.blockchain}}
+    // Search
+
 </template>
 
 <script>
@@ -26,6 +31,7 @@ export default {
   name: 'Explorer',
   data () {
     return {
+      blockchain: this.$config.ual.rootChain.toUpperCase(),
       api: null,
       loadMemCpuTimer: null,
       eosStatus: {},

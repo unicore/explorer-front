@@ -70,7 +70,7 @@
             TokensByAccount(:account-data="accountData")
 
           q-tab-panel(name="contract" style="padding: 0px !important; border: 1px solid grey;")
-            TokensByAccount(:account-data="accountData")
+            ContractByAccount(:account-name="accountData.account.account_name")
 
 </template>
 
@@ -106,7 +106,9 @@ export default {
   components: {
     AccountLink,
     ActionsByAccount: () => import('./ActionsByAccount.vue'),
-    TokensByAccount: () => import('./TokensByAccount.vue')
+    TokensByAccount: () => import('./TokensByAccount.vue'),
+    ContractByAccount: () => import('./ContractByAccount.vue')
+
   },
   computed: {
     cards () {

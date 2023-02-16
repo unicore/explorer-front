@@ -3,7 +3,7 @@
     q-input(
       v-model.trim="query"
       filled
-      label="введите имя аккаунта / id транзакции / номер блока"
+      label="введите имя аккаунта / id транзакции / номер блока или выберите контракт"
       dark
       standout="bg-teal text-white"
       color="teal"
@@ -11,6 +11,17 @@
     )
       template(v-slot:prepend)
         q-icon(name="search")
+    div.row
+      div.col-3.col-xs-6
+        q-btn(flat dark @click="search('eosio')").full-width eosio | контракт системного консенсуса
+      div.col-3.col-xs-6
+        q-btn(flat dark @click="search('unicore')").full-width unicore | контракт финансоовго реактора
+      div.col-3.col-xs-6
+        q-btn(flat dark @click="search('part')").full-width part | контракт партнёрских отношений
+      div.col-3.col-xs-6
+        q-btn(flat dark @click="search('registrator')").full-width registrator | контракт регистраций
+
+
     .q-pt-lg
       AccountResult(
         v-if="mode === 'account'"
@@ -34,7 +45,7 @@
       )
 </template>
 
-<script>
+<script>//
 export default {
   name: 'Search',
   components: {
@@ -121,15 +132,9 @@ export default {
             }
           }).catch(() => ({ data: null })) // TODO: нормальная обработка ошибок
           this.accountData = data
-          console.log(this.accountData)
+          // console.log(this.accountData)
           // if (this.accountData)
-          const deltas = await this.explorerApi.get('v2/history/get_deltas', {
-            params: {
-              code: accountName
-            }
-          }).catch(() => ({ data: null })) // TODO: нормальная обработка ошибок
-          
-          console.log("contract: ", deltas)
+         
 
           const code = await this.api.getCodeHash(accountName).catch(() => ({ data: null })) // 
           console.log(code)
