@@ -107,7 +107,7 @@ export default {
     AccountLink,
     ActionsByAccount: () => import('./ActionsByAccount.vue'),
     TokensByAccount: () => import('./TokensByAccount.vue'),
-    ContractByAccount: () => import('./ContractByAccount.vue')
+    ContractByAccount: () => import('./contractByAccount.vue')
 
   },
   computed: {
