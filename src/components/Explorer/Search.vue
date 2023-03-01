@@ -15,7 +15,7 @@
       div.col-3.col-xs-6
         q-btn(flat dark @click="search('eosio')").full-width eosio | контракт системного консенсуса
       div.col-3.col-xs-6
-        q-btn(flat dark @click="search('unicore')").full-width unicore | контракт финансоовго реактора
+        q-btn(flat dark @click="search('unicore')").full-width unicore | контракт финансового реактора
       div.col-3.col-xs-6
         q-btn(flat dark @click="search('part')").full-width part | контракт партнёрских отношений
       div.col-3.col-xs-6
@@ -56,7 +56,7 @@ export default {
   },
   data () {
     return {
-      query: '',
+      query: "",
       mode: '',
       accountData: null,
       accountCreator: null,
@@ -66,11 +66,19 @@ export default {
     }
   },
   mounted () {
+    if (this.route_query){
+      console.log('on query', this.route_query)
+      this.search(this.route_query)
+    }
+
     this.$root.$on('explorer:search', query => {
       this.search(query)
     })
   },
   computed: {
+    route_query(){
+      return this.$route.params.query
+    },
     api () {
       return this.$store.getters['blockchain/getAPI']({ blockchain: this.$config.ual.rootChain })
     },
@@ -94,6 +102,8 @@ export default {
       this.n++
     },
     async search (forcedValue, forcedMode) {
+      this.$router.push({name: 'home',params: {query: forcedValue}})
+
       if (forcedValue) {
         this.query = forcedValue
       }

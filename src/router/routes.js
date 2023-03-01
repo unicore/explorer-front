@@ -2,7 +2,7 @@ import isPartner from './isPartner'
 
 const routes = [
   {
-    path: '/',
+    path: '/:query?',
     component: () => import('layouts/simple.vue'),
     name: 'base',
     children: [
