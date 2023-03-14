@@ -11,7 +11,7 @@
     )
       template(v-slot:prepend)
         q-icon(name="search")
-    div.row
+    div(v-if="showButtons").row
       div.col-3.col-xs-6
         q-btn(flat dark @click="search('eosio')").full-width eosio | контракт системного консенсуса
       div.col-3.col-xs-6
@@ -76,6 +76,9 @@ export default {
     })
   },
   computed: {
+    showButtons(){
+      return this.$config.showButtons
+    },
     route_query(){
       return this.$route.params.query
     },
@@ -102,7 +105,9 @@ export default {
       this.n++
     },
     async search (forcedValue, forcedMode) {
-      this.$router.push({name: 'home',params: {query: forcedValue}})
+      
+      if (this.$route.params.query != forcedValue)
+        this.$router.push({name: 'home', params: {query: forcedValue}})
 
       if (forcedValue) {
         this.query = forcedValue
