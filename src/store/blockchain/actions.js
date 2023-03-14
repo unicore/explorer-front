@@ -4,6 +4,7 @@ import config from '@/config/index'
 export async function setChain ({ state, dispatch, commit }, { chain }) {
   const rpcEndpoint = chain.rpcEndpoints[0]
   const rpcEndpointString = `${rpcEndpoint.protocol}://${rpcEndpoint.host}:${rpcEndpoint.port}`
+  console.log("rpcEndpointString: ", rpcEndpointString)
   chain.api = EosApi({ httpEndpoint: rpcEndpointString })
   commit('setAPI', chain)
   return chain.api.getInfo({})
